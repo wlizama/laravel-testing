@@ -11,6 +11,12 @@ class GaleriaController extends Controller
       $imageItems = Galeria::all();
 
       // dd($imageItems);
-      return view('galeria', ['imgItems' => $imageItems]);
+      return view('galeria.index', ['imgItems' => $imageItems]);
+    }
+
+    public function showImageById($imgID){
+      $image = Galeria::find($imgID);
+
+      return view('galeria.image', ['image' => $image] );
     }
 }

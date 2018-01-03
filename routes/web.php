@@ -21,3 +21,5 @@ Route::get('/about-us',  'AboutUsController@aboutUs');
 Route::get('/user/{nickname}',  'UserController@userNickname');
 
 Route::get('/galeria',  'GaleriaController@getGaleria');
+
+Route::get('/galeria/{imgID}',  'GaleriaController@showImageById');
