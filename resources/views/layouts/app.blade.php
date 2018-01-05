@@ -24,7 +24,7 @@
                   </a>
                   <div class="dropdown-menu" aria-labelledby="nbDDMenuLink">
                     <a class="dropdown-item" href="/galeria">Lista de Imagenes</a>
-                    <a class="dropdown-item" href="/galeria/add">Nueva imagen</a>
+                    <a class="dropdown-item" href="/galeria/create">Nueva imagen</a>
                   </div>
                 </li>
               </div>

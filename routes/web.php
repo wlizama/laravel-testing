@@ -22,4 +22,6 @@ Route::get('/user/{nickname}',  'UserController@userNickname');
 
 Route::get('/galeria',  'GaleriaController@getGaleria');
 
+Route::get('/galeria/create',  'GaleriaController@formImage');
+Route::post('/galeria/create',  'GaleriaController@addImage');
 Route::get('/galeria/{imgID}',  'GaleriaController@showImageById');
