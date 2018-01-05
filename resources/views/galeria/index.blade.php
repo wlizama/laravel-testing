@@ -13,6 +13,5 @@
     @empty
       <p>No se Encontraron imagenes</p>
     @endforelse
-    
   </div>
 @endsection
