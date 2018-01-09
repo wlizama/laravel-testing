@@ -25,3 +25,7 @@ Route::get('/galeria',  'GaleriaController@getGaleria');
 Route::get('/galeria/create',  'GaleriaController@formImage');
 Route::post('/galeria/create',  'GaleriaController@addImage');
 Route::get('/galeria/{imgID}',  'GaleriaController@showImageById');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
