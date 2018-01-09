@@ -9,7 +9,7 @@ use App\Galeria;
 class GaleriaController extends Controller
 {
     public function getGaleria(){
-      $imageItems = Galeria::all();
+      $imageItems = Galeria::paginate(30);
 
       // dd($imageItems);
       return view('galeria.index', ['imgItems' => $imageItems]);
