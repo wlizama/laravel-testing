@@ -28,4 +28,4 @@ Route::get('/galeria/{imgID}',  'GaleriaController@showImageById');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
