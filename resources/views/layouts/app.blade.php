@@ -11,70 +11,61 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 </head>
 <body>
-    {{-- <div id="app"> --}}
-      <div class="container">
-        <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-          <div class="navbar-header">
-
-              <!-- Collapsed Hamburger -->
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
-                  <span class="sr-only">Toggle Navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-              </button>
-
-              <!-- Branding Image -->
-              <a class="navbar-brand" href="{{ url('/') }}">
-                  Laravel - My Gallery
-              </a>
-          </div>
-
-          <div class="collapse navbar-collapse" id="app-navbar-collapse">
+    <div id="app" class="container">
+      <nav class="navbar navbar-inverse bg-inverse navbar-toggleable-md">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#appNavbarCollapse" aria-controls="appNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        {{-- <div class="container"> --}}
+          <!-- Branding Image -->
+          <a class="navbar-brand" href="{{ url('/') }}">
+              Laravel - My Gallery
+          </a>
+          <div class="collapse navbar-collapse" id="appNavbarCollapse">
               <!-- Left Side Of Navbar -->
               <ul class="nav navbar-nav">
                   &nbsp;
               </ul>
 
               <!-- Right Side Of Navbar -->
-              <ul class="nav navbar-nav navbar-right">
+              <ul class="nav navbar-nav ml-auto">
                   <!-- Authentication Links -->
                   @guest
-                      <li><a href="{{ route('login') }}">Login</a></li>
-                      <li><a href="{{ route('register') }}">Register</a></li>
+                      <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
+                      <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Register</a></li>
                   @else
-                      <li class="dropdown">
+                      <li class="nav-item dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                               {{ Auth::user()->name }} <span class="caret"></span>
                           </a>
 
-                          <ul class="dropdown-menu">
-                              <li>
-                                  <a href="{{ route('logout') }}"
-                                      onclick="event.preventDefault();
-                                               document.getElementById('logout-form').submit();">
-                                      Salir
-                                  </a>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                                Salir
+                            </a>
 
-                                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                      {{ csrf_field() }}
-                                  </form>
-                              </li>
-                          </ul>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                          </div>
                       </li>
                   @endguest
               </ul>
           </div>
-        </nav>
+        {{-- </div> --}}
+      </nav>
 
-        @yield('content')
-      </div>
-    {{-- </div> --}}
+      @yield('content')
+    </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 </body>
 </html>
