@@ -12,7 +12,7 @@
 
   <div class="row">
     @forelse( $imgItems as $imgItem )
-      <div class="col-6">
+      <div class="col-md-6 col-sm-12">
         <div class="mt-2 mx-auto">
           <img class="img-thumbnail" src="{{ $imgItem->image }}">
           <p class="card-text">

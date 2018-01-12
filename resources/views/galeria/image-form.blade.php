@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="row">
+  <div class="row mt-2">
     <div class="col-12">
       <form action="/galeria/create" method="post">
         {{ csrf_field() }}
@@ -16,11 +16,6 @@
             <input id="txtDescription" name="descripcion" type="text" class="form-control">
           </div>
 
-          {{-- <div class="form-group">
-            <label for="txtImageURL">Image URL</label>
-            <input id="txtImageURL" name="url" type="url" class="form-control">
-          </div> --}}
-          
           <div class="@if($errors->any()) has-danger @endif"">
             @if($errors->any())
                @foreach ($errors->all() as $error)
@@ -29,8 +24,8 @@
             @endif
           </div>
           
-          <div class="col-12">
-            <button type="submit" class="btn btn-primary">Guardar</button>
+          <div class="col-sm-12 col-xl-3 mt-2">
+            <button type="submit" class="btn btn-primary btn-block">Guardar Nueva Imagen</button>
           </div>
         </div>
       </form>
