@@ -16,7 +16,8 @@
         <div class="mt-2 mx-auto">
           <img class="img-thumbnail" src="{{ $imgItem->image }}">
           <p class="card-text">
-            {{ $imgItem->content }}
+            <div><a href="/{{ $imgItem->user->username }}">{{ $imgItem->user->name }}</a></div>
+            <div>{{ $imgItem->content }}</div>
             <a href="/galeria/{{ $imgItem->id }}">Leer más</a>
           </p>
         </div>
@@ -26,9 +27,11 @@
     @endforelse
   
     @if (count($imgItems))
+    <div class="col-12">
       <div class="mt-4 mx-auto">
         {{ $imgItems->links('pagination::bootstrap-4') }} {{-- ->links() metodo solo disponible con paginate --}}
       </div>
+    </div>
     @endif
   </div>
 @endsection
