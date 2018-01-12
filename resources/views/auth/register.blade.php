@@ -22,6 +22,20 @@
                     </div>
                 </div>
 
+                <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
+                    <label for="username" class="col-md-4 form-control-label">UserName</label>
+
+                    <div class="col-md-6">
+                        <input id="username" type="username" class="form-control" name="username" value="{{ old('username') }}" required>
+
+                        @if ($errors->has('username'))
+                            <span class="form-control-feedback">
+                                <strong>{{ $errors->first('username') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+
                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                     <label for="email" class="col-md-4 form-control-label">E-Mail Address</label>
 
