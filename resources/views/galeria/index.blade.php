@@ -1,6 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+
+  @auth
+    <div class="row mt-2">
+      <div class="col">
+        <a class="btn btn-outline-primary btn-sm" href="/galeria/create">+ Agregar Nueva Imagen</a>
+      </div>
+    </div>
+  @endauth
+
   <div class="row">
     @forelse( $imgItems as $imgItem )
       <div class="col-6">

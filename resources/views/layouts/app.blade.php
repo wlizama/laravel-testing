@@ -19,7 +19,6 @@
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#appNavbarCollapse" aria-controls="appNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        {{-- <div class="container"> --}}
           <!-- Branding Image -->
           <a class="navbar-brand" href="{{ url('/') }}">
               Laravel - My Gallery
@@ -57,7 +56,6 @@
                   @endguest
               </ul>
           </div>
-        {{-- </div> --}}
       </nav>
 
       @yield('content')
