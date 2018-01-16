@@ -26,4 +26,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function imgItems(){
+        return $this->hasMany(Galeria::class)->orderBy('created_at', 'desc');
+    }
 }
