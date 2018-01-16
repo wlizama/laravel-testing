@@ -31,6 +31,8 @@ $factory->define(App\Galeria::class, function(Faker $faker) {
   return [
     'title' => $faker->realText(random_int(15, 130)),
     'content' => $faker->realText(),
-    'image' => $faker->imageURl(600, 338)
+    'image' => $faker->imageURl(600, 338),
+    'created_at' => $faker->dateTimeThisDecade,
+    'updated_at' => $faker->dateTimeThisDecade
   ];
 });
