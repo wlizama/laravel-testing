@@ -14,12 +14,7 @@
     @forelse( $imgItems as $imgItem )
       <div class="col-md-6 col-sm-12">
         <div class="mt-2 mx-auto">
-          <img class="img-thumbnail" src="{{ $imgItem->image }}">
-          <p class="card-text">
-            <div><a href="/{{ $imgItem->user->username }}">{{ $imgItem->user->name }}</a></div>
-            <div>{{ $imgItem->content }}</div>
-            <a href="/galeria/{{ $imgItem->id }}">Leer más</a>
-          </p>
+          @include('image.index')
         </div>
       </div>
     @empty
