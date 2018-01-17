@@ -15,6 +15,8 @@ Route::get('/', 'GaleriaController@getGaleria');
 
 Route::get('/about-us', 'AboutUsController@aboutUs');
 
+Route::get('/{username}/follows', 'UserController@follows');
+Route::get('/{username}/follow', 'UserController@follow');
 Route::get('/{username}', 'UserController@getGallleryOfUser');
 
 Route::get('/galeria', 'GaleriaController@getGaleria');
