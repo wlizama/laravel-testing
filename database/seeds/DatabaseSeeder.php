@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
       
-      $users = factory(App\User::class)->times(50)->create();
+      $users = factory(App\User::class, 50)->create();
       
       $users->each(function(App\User $user) use ($users){
         factory(App\Galeria::class)

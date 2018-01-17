@@ -15,10 +15,6 @@ Route::get('/', 'GaleriaController@getGaleria');
 
 Route::get('/about-us', 'AboutUsController@aboutUs');
 
-Route::get('/{username}/follows', 'UserController@follows');
-Route::get('/{username}/follow', 'UserController@follow');
-Route::get('/{username}', 'UserController@getGallleryOfUser');
-
 Route::get('/galeria', 'GaleriaController@getGaleria');
 
 Route::get('/galeria/create', 'GaleriaController@formImage')->middleware('auth');
@@ -26,3 +22,7 @@ Route::post('/galeria/create', 'GaleriaController@addImage')->middleware('auth')
 Route::get('/galeria/{imgID}', 'GaleriaController@showImageById');
 
 Auth::routes();
+
+Route::get('/{username}/follows', 'UserController@follows');
+Route::post('/{username}/follow', 'UserController@follow');
+Route::get('/{username}', 'UserController@getGallleryOfUser');
