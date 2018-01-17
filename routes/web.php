@@ -23,6 +23,7 @@ Route::get('/galeria/{imgID}', 'GaleriaController@showImageById');
 
 Auth::routes();
 
+Route::get('/{username}/followers', 'UserController@followers');
 Route::get('/{username}/follows', 'UserController@follows');
 Route::post('/{username}/follow', 'UserController@follow');
 Route::post('/{username}/unfollow', 'UserController@unfollow');
