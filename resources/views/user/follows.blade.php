@@ -4,7 +4,7 @@
 <h1>{{ $user->name }}</h1>
 
 <ul class="list-unstyled">
-@foreach($follows as $follow)
+@foreach($user->follows as $follow)
   <li>{{ $follow->username }}</li>
 @endforeach
 </ul>
