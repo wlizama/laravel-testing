@@ -18,7 +18,17 @@ class SocialAuthController extends Controller
     public function callback()
     {
       $user = Socialite::driver('facebook')->user();
-      
+     
+      $existing = User::whereHas('socialProfiles', function($query) use ($user){
+        $query->where('social_id', $user->id);
+      })->first();
+
+      if ($existing !== null) {
+        auth()->login($existing);
+
+        return redirect('/');
+      }
+
       session()->flash('facebookUser', $user); // flassh() permite guardar temporalmente en session datos que no queremos que esten en la siguiente
 
       return view('user.facebook', [
