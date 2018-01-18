@@ -24,6 +24,7 @@ Route::get('/galeria/{imgID}', 'GaleriaController@showImageById');
 Auth::routes();
 Route::get('/auth/facebook', 'SocialAuthController@facebook');
 Route::get('/auth/facebook/callback', 'SocialAuthController@callback');
+Route::post('/auth/facebook/register', 'SocialAuthController@register');
 
 Route::get('/{username}/followers', 'UserController@followers');
 Route::get('/{username}/follows', 'UserController@follows');
