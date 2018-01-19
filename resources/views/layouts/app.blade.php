@@ -42,6 +42,13 @@
                           </a>
 
                           <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/{{ Auth::user()->username }}/follows">
+                                Follows <span class="badge badge-default">{{ Auth::user()->follows->count() }}</span>
+                            </a>
+                            <a class="dropdown-item" href="/{{ Auth::user()->username }}/followers">
+                                Followers <span class="badge badge-default">{{ Auth::user()->followers->count() }}</span>
+                            </a>
+                            <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
