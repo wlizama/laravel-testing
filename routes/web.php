@@ -17,8 +17,6 @@ Route::get('/about-us', 'AboutUsController@aboutUs');
 
 Route::get('/galeria', 'GaleriaController@getGaleria');
 
-Route::get('/galeria/create', 'GaleriaController@formImage')->middleware('auth');
-Route::post('/galeria/create', 'GaleriaController@addImage')->middleware('auth');
 Route::get('/galeria/{imgID}', 'GaleriaController@showImageById');
 
 Auth::routes();
@@ -26,8 +24,21 @@ Route::get('/auth/facebook', 'SocialAuthController@facebook');
 Route::get('/auth/facebook/callback', 'SocialAuthController@callback');
 Route::post('/auth/facebook/register', 'SocialAuthController@register');
 
+
+//Middleware para proteger rutas por autenticación
+Route::group(['middleware' => 'auth'], function (){
+  Route::get('/galeria/create', 'GaleriaController@formImage');
+  Route::post('/galeria/create', 'GaleriaController@addImage');//->middleware('auth')
+
+  Route::post('/{username}/dms', 'UserController@sendPrivateMessage');
+  
+  Route::post('/{username}/follow', 'UserController@follow');
+  Route::post('/{username}/unfollow', 'UserController@unfollow');
+  
+  Route::get('/conversations/{conversation}', 'UserController@showConversation');
+});
+
+
 Route::get('/{username}/followers', 'UserController@followers');
 Route::get('/{username}/follows', 'UserController@follows');
-Route::post('/{username}/follow', 'UserController@follow');
-Route::post('/{username}/unfollow', 'UserController@unfollow');
 Route::get('/{username}', 'UserController@getGallleryOfUser');

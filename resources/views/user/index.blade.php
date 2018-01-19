@@ -19,6 +19,7 @@ Usuario
 
     @if(Gate::allows('dms', $user))
       <form action="/{{$user->username}}/dms" method="post">
+        {{ csrf_field() }}
         <input type="text" name="message" class="form-control">
 
         <button class="btn btn-success">Enviar Mensaje</button>
