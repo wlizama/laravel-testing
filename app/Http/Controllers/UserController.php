@@ -32,7 +32,7 @@ class UserController extends Controller
       $user = $this->findByUserName($username);
       return view('user.follows', [
         'user' => $user,
-        'follows' => $user->followers
+        'follows' => $user->follows
       ]);
     }
 
