@@ -3,7 +3,7 @@
 @section('content')
   <div class="row mt-2">
     <div class="col-12">
-      <form action="/galeria/create" method="post">
+      <form action="/galeria/create" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="row">
           <div class="col-12 form-group @if($errors->any()) has-danger @endif">
@@ -22,6 +22,11 @@
                   <div class="col-12 form-control-feedback">{{ $error }}</div>
               @endforeach
             @endif
+          </div>
+  
+          <div class="col-12">
+            <label for="txtImagen">Imagen</label>
+            <input id="txtImagen" name="imagen" type="file" class="form-control">
           </div>
           
           <div class="col-sm-12 col-xl-3 mt-2">

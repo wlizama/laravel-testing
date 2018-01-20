@@ -28,12 +28,13 @@ class GaleriaController extends Controller
     public function addImage(CreateGaleriaRequest $request){
 
       $user = $request->user();
+      $image = $request->file('imagen');
 
       $image = Galeria::create([
         'user_id' => $user->id,
         'title' => $request->input('title'),
         'content' => $request->input('descripcion'),
-        'image' => 'http://lorempixel.com/600/338?'.mt_rand(0, 1000)
+        'image' => $image->store('galeria', 'public')
       ]);
 
       return redirect('/galeria/'.$image->id);
