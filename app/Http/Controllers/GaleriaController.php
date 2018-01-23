@@ -47,7 +47,7 @@ class GaleriaController extends Controller
     {
       $query = $request->input('query');
 
-      $imagenes = Galeria::where('content', 'LIKE', "%$query%")->get();
+      $imagenes = Galeria::with('user')->where('content', 'LIKE', "%$query%")->get();
 
       return view('galeria.index', [
         'imgItems' => $imagenes,
