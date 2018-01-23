@@ -12,7 +12,10 @@ class GaleriaController extends Controller
       $imageItems = Galeria::paginate(30);
 
       // dd($imageItems);
-      return view('galeria.index', ['imgItems' => $imageItems]);
+      return view('galeria.index',[
+        'imgItems' => $imageItems,
+        'paginate' => true
+      ]);
     }
 
     public function showImageById($imgID){
@@ -38,5 +41,17 @@ class GaleriaController extends Controller
       ]);
 
       return redirect('/galeria/'.$image->id);
+    }
+
+    public function search(Request $request)
+    {
+      $query = $request->input('query');
+
+      $imagenes = Galeria::where('content', 'LIKE', "%$query%")->get();
+
+      return view('galeria.index', [
+        'imgItems' => $imagenes,
+        'paginate' => false
+      ]);
     }
 }

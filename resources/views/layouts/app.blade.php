@@ -26,7 +26,16 @@
           <div class="collapse navbar-collapse" id="appNavbarCollapse">
               <!-- Left Side Of Navbar -->
               <ul class="nav navbar-nav">
-                  &nbsp;
+                  <li class="nav navbar-item">
+                    <form action="/galeria">
+                      <div class="input-group">
+                        <input type="text" name="query" class="form-control" placeholder="Buscar..." required>
+                        <span class="input-group-btn">
+                          <button class="btn btn-outline-success">Buscar</button>
+                        </span>
+                      </div>
+                    </form>
+                  </li>
               </ul>
 
               <!-- Right Side Of Navbar -->

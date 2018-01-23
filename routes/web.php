@@ -15,7 +15,7 @@ Route::get('/', 'GaleriaController@getGaleria');
 
 Route::get('/about-us', 'AboutUsController@aboutUs');
 
-Route::get('/galeria', 'GaleriaController@getGaleria');
+Route::get('/galeria', 'GaleriaController@search');
 
 Route::get('/galeria/{imgID}', 'GaleriaController@showImageById');
 

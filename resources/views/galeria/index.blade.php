@@ -21,12 +21,14 @@
       <p>No se Encontraron imagenes</p>
     @endforelse
   
-    @if (count($imgItems))
-    <div class="col-12">
-      <div class="mt-4 mx-auto">
-        {{ $imgItems->links('pagination::bootstrap-4') }} {{-- ->links() metodo solo disponible con paginate --}}
+    @if($paginate)
+      @if (count($imgItems))
+      <div class="col-12">
+        <div class="mt-4 mx-auto">
+          {{ $imgItems->links('pagination::bootstrap-4') }} {{-- ->links() metodo solo disponible con paginate --}}
+        </div>
       </div>
-    </div>
+      @endif
     @endif
   </div>
 @endsection
