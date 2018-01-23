@@ -7,7 +7,8 @@ use App\Http\Requests\CreateGaleriaRequest;
 use App\Galeria;
 
 class GaleriaController extends Controller
-{
+ {
+
     public function getGaleria(){
       $imageItems = Galeria::paginate(30);
 
@@ -47,7 +48,8 @@ class GaleriaController extends Controller
     {
       $query = $request->input('query');
 
-      $imagenes = Galeria::with('user')->where('content', 'LIKE', "%$query%")->get();
+      $imagenes = Galeria::search($query)->get();
+      $imagenes->load('user');
 
       return view('galeria.index', [
         'imgItems' => $imagenes,

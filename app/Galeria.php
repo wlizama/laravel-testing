@@ -3,10 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 
 class Galeria extends Model
 {
     protected $guarded = []; // array de columnas protegidas
+
+    use Searchable;
 
     public function user()
     {
