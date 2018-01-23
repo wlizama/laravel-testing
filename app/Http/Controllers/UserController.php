@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function getGallleryOfUser($username){
+      throw new \Exception("Error con disimulo");
+      
       $user = $this->findByUserName($username);
       return view('user.index', [ 'user' => $user ]);
     }
@@ -81,6 +83,6 @@ class UserController extends Controller
     }
 
     private function findByUserName($username){
-      return User::where('username', $username)->first();
+      return User::where('username', $username)->firstOrFail();
     }
 }
