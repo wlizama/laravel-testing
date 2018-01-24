@@ -18,4 +18,12 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+
+    // public function testCanSearchForMessage()
+    // {
+    //     $response = $this->get('/galeria?query=Alice');
+
+    //     $response->assertSee('Alice');
+    // }
 }

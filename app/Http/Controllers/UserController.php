@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function getGallleryOfUser($username){
-      throw new \Exception("Error con disimulo");
+      // throw new \Exception("Error con disimulo");
       
       $user = $this->findByUserName($username);
       return view('user.index', [ 'user' => $user ]);
