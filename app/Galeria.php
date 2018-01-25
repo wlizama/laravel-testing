@@ -31,6 +31,6 @@ class Galeria extends Model
 
     public function responses()
     {
-      return $this->hasMany(Response::class)->lastest();
+      return $this->hasMany(Response::class)->latest();
     }
 }

@@ -59,6 +59,6 @@ class GaleriaController extends Controller
 
     public function responses(Galeria $message)
     {
-      return $message;
+      return $message->responses;
     }
 }
