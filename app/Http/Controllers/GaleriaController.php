@@ -56,4 +56,9 @@ class GaleriaController extends Controller
         'paginate' => false
       ]);
     }
+
+    public function responses(Galeria $message)
+    {
+      return $message;
+    }
 }

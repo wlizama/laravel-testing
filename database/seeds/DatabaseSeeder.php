@@ -15,11 +15,18 @@ class DatabaseSeeder extends Seeder
       $users = factory(App\User::class, 50)->create();
       
       $users->each(function(App\User $user) use ($users){
-        factory(App\Galeria::class)
+        $galerias = factory(App\Galeria::class)
           ->times(20)
           ->create([
             'user_id' => $user->id
           ]);
+
+          $galerias->each(function (App\Galeria $galeria) use ($users) {
+            factory(App\Response::class, random_int(1, 10))->create([
+              'galeria_id' => $galeria->id,
+              'user_id' =>$users->random(1)->first()->id
+            ]);
+          });
 
           $user->follows()->sync(
             $users->random(10)

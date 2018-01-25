@@ -28,4 +28,9 @@ class Galeria extends Model
       $this->load('user');
       return $this->toArray();
     }
+
+    public function responses()
+    {
+      return $this->hasMany(Response::class)->lastest();
+    }
 }

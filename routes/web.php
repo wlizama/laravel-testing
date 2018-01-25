@@ -38,6 +38,8 @@ Route::group(['middleware' => 'auth'], function (){
   Route::get('/conversations/{conversation}', 'UserController@showConversation');
 });
 
+Route::get('/api/galeria/{message}/responses', 'GaleriaController@responses');
+
 
 Route::get('/{username}/followers', 'UserController@followers');
 Route::get('/{username}/follows', 'UserController@follows');
