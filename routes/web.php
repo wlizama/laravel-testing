@@ -36,6 +36,9 @@ Route::group(['middleware' => 'auth'], function (){
   Route::post('/{username}/unfollow', 'UserController@unfollow');
   
   Route::get('/conversations/{conversation}', 'UserController@showConversation');
+
+  Route::get('/api/notifications', 'UserController@notifications');
+
 });
 
 Route::get('/api/galeria/{message}/responses', 'GaleriaController@responses');

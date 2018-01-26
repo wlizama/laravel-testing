@@ -88,4 +88,9 @@ class UserController extends Controller
     private function findByUserName($username){
       return User::where('username', $username)->firstOrFail();
     }
+
+    public function notifications(Request $request)
+    {
+        return $request->user()->notifications;
+    }
 }
