@@ -18,4 +18,5 @@
       </div>
     </div>
   </div>
+<responses :image="{{ $image->id }}"></responses>
 @endsection
