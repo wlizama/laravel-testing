@@ -1169,7 +1169,8 @@ window.Pusher = __webpack_require__(38);
 
 window.Echo = new __WEBPACK_IMPORTED_MODULE_1_laravel_echo___default.a({
   broadcaster: 'pusher',
-  key: 'a96e76bc859be75f85b8'
+  key: '20e8400823f7b1d4364b',
+  cluster: 'ap1'
 });
 
 /***/ }),
@@ -51809,7 +51810,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['user'],
@@ -51825,7 +51825,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       _this.notifications = response.data;
 
       Echo.private('App.User.' + _this.user).notification(function (notification) {
-        _this.notification.unshift(notification);
+        console.log(notification);
+        _this.notifications.unshift(notification);
       });
     });
   }
@@ -51850,8 +51851,13 @@ var render = function() {
           attrs: { href: "/" + notification.data.follower.username }
         },
         [
-          _c("b", [_vm._v("@" + _vm._s(notification.data.follower.username))]),
-          _vm._v(" te ha seguido\n  ")
+          _c("b", [
+            _vm._v(
+              "@" +
+                _vm._s(notification.data.follower.username) +
+                " te ha seguido!"
+            )
+          ])
         ]
       )
     })
