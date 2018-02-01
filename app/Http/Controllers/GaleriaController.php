@@ -61,4 +61,11 @@ class GaleriaController extends Controller
     {
       return $message->responses;
     }
+
+    public function locale(Request $request)
+    {
+      session()->put('locale', $request->input('lang'));
+
+      return back();
+    }
 }

@@ -18,6 +18,7 @@ Route::get('/about-us', 'AboutUsController@aboutUs');
 Route::get('/galeria', 'GaleriaController@search');
 
 Route::get('/galeria/{imgID}', 'GaleriaController@showImageById');
+Route::get('/locale', 'GaleriaController@locale');
 
 Auth::routes();
 Route::get('/auth/facebook', 'SocialAuthController@facebook');

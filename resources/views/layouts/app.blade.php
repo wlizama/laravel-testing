@@ -21,7 +21,7 @@
         </button>
           <!-- Branding Image -->
           <a class="navbar-brand" href="{{ url('/') }}">
-              Laravel - My Gallery
+              Laravel - @lang('app.title')
           </a>
           <div class="collapse navbar-collapse" id="appNavbarCollapse">
               <!-- Left Side Of Navbar -->
@@ -29,9 +29,9 @@
                   <li class="nav navbar-item">
                     <form action="/galeria">
                       <div class="input-group">
-                        <input type="text" name="query" class="form-control" placeholder="Buscar..." required>
+                        <input type="text" name="query" class="form-control" placeholder="@lang('app.search')" required>
                         <span class="input-group-btn">
-                          <button class="btn btn-outline-success">Buscar</button>
+                          <button class="btn btn-outline-success">@lang('app.search')</button>
                         </span>
                       </div>
                     </form>
@@ -40,6 +40,15 @@
 
               <!-- Right Side Of Navbar -->
               <ul class="nav navbar-nav ml-auto">
+                  <div class="mt-2 mr-2">
+                    
+                  @if (App::getLocale() == 'es')
+                    <a href="/locale?lang=en">EN</a>
+                  @else
+                    <a href="/locale?lang=es">ES</a>
+
+                  @endif
+                  </div>
 
                   <!-- Authentication Links -->
                   @guest
